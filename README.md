@@ -2,11 +2,11 @@
 Companion repository for LAPSec paper
 # Complete list of tested policies
 
-|Index|Statement|Type|Associated TP/RP| Notes |
+|Index|Statement|Type|Associated RPs| Notes |
 |-----|---------------------------|---|-------------------------|---------------------------|
-|1|If there is any read attempt of PMP registers from U-mode, HW should raise an IIE |TP|asd|Applicable for both platforms|
-|2|If there is any write attempt of PMP registers from U-mode, HW should raise an IIE|TP|asd|Applicable for both platforms|
-|3|The CSR _mepc_ should hold the address of the instruction that raised the exception|RP|asd|Applicable for both platforms|
+|1|If there is any read attempt of PMP registers from U-mode, HW should raise an IIE |TP|3,4,5,6,7|Applicable for both platforms|
+|2|If there is any write attempt of PMP registers from U-mode, HW should raise an IIE|TP|3,4,5,6,7|Applicable for both platforms|
+|3|The CSR _mepc_ should hold the address of the instruction that raised the exception|RP|N/A|Applicable for both platforms|
 |4|The exception code field of the _mcause_ register should have the value of 0x2 when IIE occurs|RP|asd|Applicable for both platforms|
 |5|The CSR _mtvec_ should be set by SW to point to the TH routine to divert the program flow to it should an exception occur|RP|asd| _mtvec_ is set by HW in IBS|
 |6|The CSR _mtvec_ should be set by SW to point to the TH routine to divert the program flow to it should an exception occur|RP|asd|Applicable for both platforms|
