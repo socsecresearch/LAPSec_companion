@@ -24,7 +24,7 @@ Companion repository for LAPSec paper
 |18|U-mode mode should be able to read from all permitted memory regions|TP|asd|Applicable to both systems|
 |19|U-mode mode should be able to write to all permitted memory regions|TP|asd|Applicable to both systems|
 |20|Upon reset the _mstatus_ register should hold a certain value|RP|asd|Neorv32 requires the value 0x1800 whereas IBS requires it to be 0x0080|
-|21|Upon reset the _mtvec_ register should hold a certain value|RP|asdIBS requires it to be 0x01|
+|21|Upon reset the _mtvec_ register should hold a certain value|RP|asd|IBS requires it to be 0x01|
 |22|If TM=0 in _mcounteren_ register, them attempting to read _time_ register from U-mode should raise an IIE|TP|asd|Applicable to both systems|
 |23|If IR=0 in _mcounteren_ register, them attempting to read _instret_ register from U-mode should raise an IIE|TP|asd|Applicable to both systems|
 |24-31|If HMPn=0 in _mcounteren_ register, them attempting to read _hpmcountern_ register from U-mode should raise an IIE|TP|asd|Applicable to both systems._n_ is an integer number. Both system HW were synthesized with 8 performance counters (HPM).|
