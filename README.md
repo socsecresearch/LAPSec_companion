@@ -7,11 +7,11 @@ Companion repository for LAPSec paper
 |1|If there is any read attempt of PMP registers from U-mode, HW should raise an IIE |TP|3,4,5,6,7|Applicable for both platforms| RISC-V Privileged Spec.| 
 |2|If there is any write attempt of PMP registers from U-mode, HW should raise an IIE|TP|3,4,5,6,7|Applicable for both platforms|RISC-V Privileged Spec.|
 |3|The CSR _mepc_ should hold the address of the instruction that raised the exception|RP|N/A|Applicable for both platforms|RISC-V Privileged Spec.|
-|4|The exception code field of the _mcause_ register should have the value of 0x2 when IIE occurs|RP|asd|Applicable for both platforms|RISC-V Privileged Spec.|
+|4|The exception code field of the _mcause_ register should have the value of 0x2 when IIE occurs|RP|N/A|Applicable for both platforms|RISC-V Privileged Spec.|
 |5|The CSR _mtvec_ should be set by SW to point to the TH routine to divert the program flow to it should an exception occur|RP|N/A| _mtvec_ is set by SW in Neorv32|RISC-V Privileged Spec.|
 |6|The CSR _mtvec_ should be set by SW to point to the TH routine to divert the program flow to it should an exception occur|RP|N/A|Applicable for both platforms|RISC-V Privileged Spec.|
 |7|The TH should execute appropriate action as dictated by system designer|RP|N/A|IBS prints cause of exception to UART, Neorv simply skips the instruction in bare metal setup, while in FreeRTOS mode, gets diverted to FreeRTOS TH |Neorv and IBS device spec.|
-|8|From U-mode application, attempting to execute instructions in protected memory regions should result in instruction access fault|TP|5,7|Applicable for both systems|RISC-V Privileged Spec.|
+|8|From U-mode application, attempting to execute instructions in protected memory regions should result in instruction access fault|TP|3,5,7|Applicable for both systems|RISC-V Privileged Spec.|
 |9|Attempts to read unimplemented CSRs should raise an IIE|TP|asd|Applicable for both platforms|RISC-V Privileged Spec.|
 |10|Attempts to write to unimplemented CSRs should raise an IIE|TP|asd|Applicable for both platforms|RISC-V Privileged Spec.|
 |11|From U-mode application, attempting to load data from protected memory regions should result in load access fault|TP|asd|Applicable for both systems|RISC-V Privileged Spec.|
