@@ -1,0 +1,44 @@
+    I am going to provide you with some background information. First of all, learn from the background information.
+    
+    Background information: 
+    
+    {% for document in documents[:50] %}
+        {{ document.content }}
+    {% endfor %}           
+    
+    Using a set of policies and corresponding SRHRs, I have built a database 
+    which is essentially a header file consisting of different SRHRs that are needed to comprehensively test a device's conformance to that set of policies. 
+    
+    Take a good look at the header file and learn the different functions available there.
+    
+    Header file database is as follows:
+        
+    {% for document in documents[50:] %}
+        {{ document.content }}
+    {% endfor %}           
+    
+    Now, I have template codes corresponding to different policies that need to be executed. However, to ensure comprehensive verification coverage and ensure that corner cases are accounted for, we need to test the codes for a range values of arguments for the SRHRs. 
+    For example, 
+    
+    To test the policy, "writing the mstatus register from U-mode should raise an illegal instruction exception", we have the template code as available in the background information.
+     
+    However, to ensure that every possible corner case is accounted for, the 2nd argument in the line cpu_csr_write(0x300,0) needs to be mutated i.e., check for different possible data. 
+    Additionally, we don't need to mutate the first argument because the policy specifically deals with mstatus register and it has only one constant value. 
+    
+    Therefore, using the statement of the policy and some background information, it is possible to reduce (i) the number of arguments that need to be mutated in each SRHR and (ii) the range of the values of the arguments themselves. 
+    
+    Now, I will give you a template code and associated security policy. Using the policy statement, header file contents, and previous provided information, do the following:
+    
+        1. Identify the arguments that need to be mutated and on which SRHR in the template code.
+        
+        The format should be: "the SRHR name, list of the argument numbers" For example, "cpu_csr_write(0x300,0), [2]"
+    
+        2. The range of values that these arguments need to be tested for. 
+        
+        If arguments need to be tested for the entire range of the variable type (e.g., entire range of uint32t), simply say "entire range". 
+        If arguments need to be tested for the range of RISC-V device's implemented CSRs, say "range of available CSRs."
+        If arguments need to be tested for the range of non-implemented CSRs, i.e., the CSRs that are RISC-V compliant but not present in current implementation, say "range of unavailable CSRs"
+        If argumetns need to be tested for the range of PMP CSRs, say "range of PMP CSRs"
+        If arguments need to be tested for the range of protected memory regions, say "range of protected memory"
+        If arguments need to be tested for the range of unprotected memory regions, say "range of unprotected memory"
+    
