@@ -18,8 +18,8 @@ Companion repository for LAPSec paper
 |12|From U-mode application, attempting to store data to protected memory regions should result in store access fault|TP|3,6,7,14|Applicable for both systems|RISC-V Privileged Spec.|
 |13|The exception code field of the _mcause_ CSR should have the value of 0x5 when load access faults are raised|RP|N/A|Applicable for both systems|RISC-V Privileged Spec.|
 |14|The exception code field of the _mcause_ CSR should have the value of 0x7 when store access faults are raised|RP|N/A|Applicable for both systems|RISC-V Privileged Spec.|
-|15|U-mode application should not be able to use DMA to read from protected memory regions|TP|asd|Applicable to both systems|RISC-V Privileged Spec.|
-|16|U-mode application should not be able to use DMA to write to protected memory regions|TP|asd|Applicable to both systems|RISC-V Privileged Spec.|
+|15|U-mode application attempting to use DMA to read from protected memory regions should raise a load access fault exception|TP|3,6,7,13|Applicable to Neorv32 only as it has a DMA|RISC-V Privileged Spec.|
+|16|U-mode application attempting to use DMA to write to protected memory regions should raise a store access fault exception|TP|3,6,7,14|Applicable to Neorv32 only as it has a DMA|RISC-V Privileged Spec.|
 |17|U-mode application should not be able to use DMA to write to protected memory regions|TP|asd|Applicable to both systems|RISC-V Privileged Spec.|
 |18|U-mode mode should be able to read from all permitted memory regions|TP|asd|Applicable to both systems|RISC-V Privileged Spec.|
 |19|U-mode mode should be able to write to all permitted memory regions|TP|asd|Applicable to both systems|RISC-V Privileged Spec.|
