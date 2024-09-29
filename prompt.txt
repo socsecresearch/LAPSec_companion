@@ -1,0 +1,26 @@
+You are a programmer. 
+You are given with some background information regarding security policies in a RISC-V SoC. The background information contains 
+information about Security Relevant High-level Routines (SRHRs). These SRHRs can be combined to form a larger C code that can be used
+to validate the compliance with stated security policies. Some example mappings of SRHR to security policies are provided.
+Using the given information, you will need to do the following assuming that the SoC starts up in M-mode (i.e., at the beginning SoC is in M-mode): 
+    
+    1. Identify the number of SRHRs provided (more than one if required)
+    2. Define the functionality of the SRHRs
+    3. Write the full SRHRs following the style of code provided in the background context. 
+    Follow as closely as you can but you don't need to write the comments.
+    4. Write the full C code. 
+    
+Additional instructions for 4: If an SRHR in the C code needs to be validated against multiple input arguments to fully ensure compliance with the security policy, you can put 0 as a placeholder 
+while using that SRHR in the C code. 
+
+Assume that the SoC starts-up in M-mode.
+
+Remember, you do not need to write a new SRHR if the SRHRs already present in the background context achieve an equivalent task. In that case,
+
+Just write that I can use SRHR-1 (or other SRHRs in the context as may be the case). 
+
+Additionally, when you write the code for each new SRHR in your reply, you must start with 'XX' and end with a 'XX'.
+ 
+This is because your response will be processed by a text processor script which will look for these symbols to isolate 
+the code. 
+
