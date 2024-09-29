@@ -20,11 +20,11 @@ Companion repository for LAPSec paper
 |14|The exception code field of the _mcause_ CSR should have the value of 0x7 when store access faults are raised|RP|N/A|Applicable for both systems|RISC-V Privileged Spec.|
 |15|U-mode application attempting to use DMA to read from protected memory regions should raise a load access fault exception|TP|3,6,7,13|Applicable to Neorv32 only as it has a DMA|RISC-V Privileged Spec.|
 |16|U-mode application attempting to use DMA to write to protected memory regions should raise a store access fault exception|TP|3,6,7,14|Applicable to Neorv32 only as it has a DMA|RISC-V Privileged Spec.|
-|17|U-mode application attempting to use DMA to execute instructions in protected memory regions should raise an instruction access fault|TP|3,5,6,7|Applicable to Neorv32 only as it has a DMA|RISC-V Privileged Spec.|
-|18|U-mode mode should be able to read from all permitted memory regions without the raising of any exceptions|TP|3,4,5,6,7,13,14|Applicable to both systems|RISC-V Privileged Spec.|
-|19|U-mode mode should be able to write to all permitted memory regions|TP|3,4,5,6,7,13,14|Applicable to both systems|RISC-V Privileged Spec.|
-|20|Upon reset the _mstatus_ register should hold a certain value|RP|asd|Neorv32 requires the value 0x1800 whereas IBS requires it to be 0x0080|RISC-V Privileged Spec.|
-|21|Upon reset the _mtvec_ register should hold a certain value|RP|asd|IBS requires it to be 0x01|RISC-V Privileged Spec.|
-|22|If TM=0 in _mcounteren_ register, them attempting to read _time_ register from U-mode should raise an IIE|TP|asd|Applicable to both systems|RISC-V Privileged Spec.|
-|23|If IR=0 in _mcounteren_ register, them attempting to read _instret_ register from U-mode should raise an IIE|TP|asd|Applicable to both systems|RISC-V Privileged Spec.|
-|24-31|If HMPn=0 in _mcounteren_ register, them attempting to read _hpmcountern_ register from U-mode should raise an IIE|TP|asd|Applicable to both systems._n_ is an integer number. Both system HW were synthesized with 8 performance counters (HPM).|RISC-V Privileged Spec.|
+|17|U-mode application attempting to use DMA to execute instructions in protected memory regions should raise an instruction access fault|TP|3,5,6,7|Applicable to Neorv32 only as it has a DMA|Interpreted from  RISC-V Privileged Spec., CWE-1189 and CVE-2018-15383|
+|18|U-mode mode should be able to read from all permitted memory regions without the raising of any exceptions|TP|3,4,5,6,7,13,14|Applicable to both systems|Interpreted from  RISC-V Privileged Spec., CWE-1189 and CVE-2018-15383|
+|19|U-mode mode should be able to write to all permitted memory regions|TP|3,4,5,6,7,13,14|Applicable to both systems|Interpreted from  RISC-V Privileged Spec., CWE-1189 and CVE-2018-15383|
+|20|Upon reset the _mstatus_ register should hold a certain value|RP|N/A|Neorv32 requires the value 0x1800 whereas IBS requires it to be 0x0080|RISC-V Privileged Spec.|
+|21|Upon reset the _mtvec_ register should hold a certain value|RP|N/A|IBS requires it to be 0x01|RISC-V Privileged Spec.|
+|22|If TM=0 in _mcounteren_ register, them attempting to read _time_ register from U-mode should raise an IIE|TP|3,4,6,7|Applicable to both systems|RISC-V Privileged Spec.|
+|23|If IR=0 in _mcounteren_ register, them attempting to read _instret_ register from U-mode should raise an IIE|TP|3,4,6,7|Applicable to both systems|RISC-V Privileged Spec.|
+|24-31|If HMPn=0 in _mcounteren_ register, them attempting to read _hpmcountern_ register from U-mode should raise an IIE|TP|3,4,6,7|Applicable to both systems._n_ is an integer number. Both system HW were synthesized with 8 performance counters (HPM).|RISC-V Privileged Spec.|
