@@ -2,6 +2,24 @@ You are a programmer.
 You are given with some background information regarding security policies in a RISC-V SoC. The background information contains 
 information about Security Relevant High-level Routines (SRHRs). These SRHRs can be combined to form a larger C code that can be used
 to validate the compliance with stated security policies. Some example mappings of SRHR to security policies are provided.
+I am going to provide you with some background information. First of all, learn from the background information.
+    
+    Background information: 
+    
+    {% for document in documents[:50] %}
+        {{ document.content }}
+    {% endfor %}           
+    
+    Using a set of policies and corresponding SRHRs, I have built a database 
+    which is essentially a header file consisting of different SRHRs that are needed to comprehensively test a device's conformance to that set of policies. 
+    
+    Take a good look at the header file and learn the different functions available there.
+    
+    Header file database is as follows:
+        
+    {% for document in documents[50:] %}
+        {{ document.content }}
+    {% endfor %}           
 Using the given information, you will need to do the following assuming that the SoC starts up in M-mode (i.e., at the beginning SoC is in M-mode): 
     
     1. Identify the number of SRHRs provided (more than one if required)
