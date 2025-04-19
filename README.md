@@ -29,4 +29,18 @@ Companion repository for LAPSec paper
 |23|If IR=0 in _mcounteren_ register, them attempting to read _instret_ register from U-mode should raise an IIE|TP|3,4,6,7|Applicable to all three systems|RISC-V Privileged Spec.|
 |24-31|If HMPn=0 in _mcounteren_ register, them attempting to read _hpmcountern_ register from U-mode should raise an IIE|TP|3,4,6,7|Applicable to all three systems._n_ is an integer number. Neorv32 and IBS systems were synthesized with 8 performance counters (HPM).|RISC-V Privileged Spec.|
 |32| Attempts to execute access the vector CSRs will raise an illegal instruction when mstatus.VS =0 | TP |-|Applicable to Ara only| RVV spec |
-
+|33| Attempts to execute any vector instruction raise an illegal instruction when mstatus.VS =0 | TP |-|Applicable to Ara only| RVV spec |
+|34| When mstatus.VS is set to Initial or Clean, executing any instruction that changes vector state, will change mstatus.VS to Dirty| TP |-|Applicable to Ara only| RVV spec |
+|35| When mstatus.VS is set to Initial or Clean, executing any instruction that changes the vector CSRs, will change mstatus.VS to Dirty| TP |-|Applicable to Ara only| RVV spec |
+|36|Prestart elements cannot raise exceptions and change destination register contents| TP |-|Applicable to Ara only| RVV spec |
+|37| Active elements can raise exceptions and change destination register contents | TP |-|Applicable to Ara only| RVV spec |
+|38| Inactive elements cannot raise exceptions nor change destination register contents if vtype.vma=0 | TP |-|Applicable to Ara only| RVV spec |
+|39| Inactive elements can be overwritten with all 1s in destination register contents if vtype.vma=1 | RP |-|Applicable to Ara only| RVV spec |
+|40| Tail elements cannot raise exceptions nor change destination register contents if vtype.vta=0 | RP |-|Applicable to Ara only| RVV spec |
+|41| Tail elements can be overwritten with all 1s in destination register contents if vtype.vta=1 | RP |-|Applicable to Ara only| RVV spec |
+|42| When vstart>=VL, there are no body elements and no elements are updated in any destination vector register group | TP |-|Applicable to Ara only| RVV spec |
+|43| All elements are updated in the x and f registers, even if vstart>VL or VL=0| RP |-|Applicable to Ara only| RVV spec |
+|44| A vector floating-point divide by zero (DZ) exception at any active floating-point element sets the DZ exception flag in the fflags register | TP |-|Applicable to Ara only| RVV spec |
+|45| A vector floating-point invalid (NV) exception at any active floating-point element sets the NV exception flag in the fflags register  | TP |-|Applicable to Ara only| RVV spec |
+|46| Low-level firmware/driver routines should have proper input validation | TP |-|Applicable to all| CWE-20 |
+|47| Low-level firmware/driver routines should have proper type conversion | RP |-|Applicable to all| CWE-704 |
