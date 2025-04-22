@@ -32,12 +32,12 @@ Companion repository for LAPSec paper
 |33| Attempts to execute any vector instruction raise an illegal instruction when mstatus.VS =0 | TP |-|Applicable to Ara only| RVV spec |
 |34| When mstatus.VS is set to Initial or Clean, executing any instruction that changes vector state, will change mstatus.VS to Dirty| TP |-|Applicable to Ara only| RVV spec |
 |35| When mstatus.VS is set to Initial or Clean, executing any instruction that changes the vector CSRs, will change mstatus.VS to Dirty| TP |-|Applicable to Ara only| RVV spec |
-|36|Prestart elements cannot raise exceptions and change destination register contents| TP |-|Applicable to Ara only| RVV spec |
-|37| Active elements can raise exceptions and change destination register contents | TP |-|Applicable to Ara only| RVV spec |
-|38| Inactive elements cannot raise exceptions nor change destination register contents if vtype.vma=0 | TP |-|Applicable to Ara only| RVV spec |
-|39| Inactive elements can be overwritten with all 1s in destination register contents if vtype.vma=1 | RP |-|Applicable to Ara only| RVV spec |
-|40| Tail elements cannot raise exceptions nor change destination register contents if vtype.vta=0 | RP |-|Applicable to Ara only| RVV spec |
-|41| Tail elements can be overwritten with all 1s in destination register contents if vtype.vta=1 | RP |-|Applicable to Ara only| RVV spec |
+|36|Prestart elements cannot raise exceptions and change destination register contents for vector arithmetic instructions such as vxor, vand, vadd, vsub, vmul| TP |-|Applicable to Ara only| RVV spec |
+|37| Active elements can raise exceptions and change destination register contents for vector arithmetic instructions such as vxor, vand, vadd, vsub, vmul| TP |-|Applicable to Ara only| RVV spec |
+|38| Inactive elements cannot raise exceptions nor change destination register contents for vector arithmetic instructions such as vxor, vand, vadd, vsub, vmul if vtype.vma=0 | TP |-|Applicable to Ara only| RVV spec |
+|39| Inactive elements can be overwritten with all 1s in destination register contents for vector arithmetic instructions such as vxor, vand, vadd, vsub, vmulif vtype.vma=1 | RP |-|Applicable to Ara only| RVV spec |
+|40| Tail elements cannot raise exceptions nor change destination register contents if for vector arithmetic instructions such as vxor, vand, vadd, vsub, vmulvtype.vta=0 | RP |-|Applicable to Ara only| RVV spec |
+|41| Tail elements can be overwritten with all 1s in destination register contents if for vector arithmetic instructions such as vxor, vand, vadd, vsub, vmul vtype.vta=1 | RP |-|Applicable to Ara only| RVV spec |
 |42| When vstart>=VL, there are no body elements and no elements are updated in any destination vector register group | TP |-|Applicable to Ara only| RVV spec |
 |43| All elements are updated in the x and f registers, even if vstart>VL or VL=0| RP |-|Applicable to Ara only| RVV spec |
 |44| A vector floating-point divide by zero (DZ) exception at any active floating-point element sets the DZ exception flag in the fflags register | TP |-|Applicable to Ara only| RVV spec |
