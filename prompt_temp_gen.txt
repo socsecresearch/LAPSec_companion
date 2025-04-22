@@ -33,6 +33,8 @@ while using that SRHR in the C code.
 
 Assume that the SoC starts-up in M-mode.
 
+If the policy relates to RISC-V vector extension, include an appropriate SRHR to set up the vector envrionment. Assume that VLEN=1024, SEW=16 and vl=vlmax.
+
 Remember, you do not need to write a new SRHR if the SRHRs already present in the background context achieve an equivalent task. In that case,
 
 Just write that I can use SRHR-1 (or other SRHRs in the context as may be the case). 
